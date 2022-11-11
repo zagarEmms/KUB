@@ -1,0 +1,14 @@
+{
+  "name": "kubnode",
+  "version": "1.0.0",
+  "description": "kub website project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Herrero Emma Tarazona",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
