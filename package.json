@@ -2,13 +2,25 @@
   "name": "kubnode",
   "version": "1.0.0",
   "description": "kub website project",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-windows": "mkdir dist\\media && xcopy /S /E .\\src\\media .\\dist\\media && npm run html-minifier && npm run css-minifier",
+    "build-mac": "cp -r ./src/media ./dist/media && npm run html-minifier && npm run css-minifier",
+    "start": "node app.js",
+    "watch": "browser-sync start --proxy \"localhost:3000\" --files dist/*",
+    "debug": "nodemon",
+    "html-minifier": "html-minifier --input-dir src --output-dir dist --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css true",
+    "css-minifier": "html-minifier --input-dir src --output-dir dist --file-ext css --remove-comments --collapse-whitespace --minify-js true --minify-css true"
+
   },
-  "author": "Ivan Herrero Emma Tarazona",
+  "author": "Ivan Herrero Vicente Emma Tarazona García Younes Bouahmed Alavedra",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "browser-sync": "^2.27.9",
+    "html-minifier": "^4.0.0",
+    "nodemon": "^2.0.15"
   }
+
+
 }
